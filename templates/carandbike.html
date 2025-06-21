@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ecercies 3</title>
+    <style>
+        :root {
+            --primary-color: #dadada;
+            --text-color: rgb(242, 77, 77);
+            --secondary-color: #6ea5fccc;
+        }
+
+        body {
+            background-color: rgba(98, 98, 98, 0.592);
+            padding: 0;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        header {
+            margin: 0;
+            padding: 0;
+            display: block;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 18px 0;
+            margin-top: 0;
+        }
+
+        .nav1 {
+            position: sticky;
+            top: 0;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        ul li {
+            list-style: none;
+            display: inline-block;
+            padding: 2vw 4vw;
+            font-weight: bolder;
+        }
+
+        ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        ul li a:hover {
+            color: rgb(255, 0, 0);
+            text-decoration: underline yellow;
+            transition: 0.3s;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2vw;
+            margin: 2vw 0;
+        }
+
+        .card {
+            background-color: rgb(14, 10, 10);
+            border-radius: 10px;
+            width: 340px;
+            max-width: 90vw;
+            margin: 1vw 0;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .pic {
+            padding: 5px;
+        }
+
+        .pic img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .cap {
+            padding: 0 28px 0 14px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .cap span {
+            border: 2px solid rgb(255, 178, 178);
+            border-radius: 7px;
+            font-size: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 0 6px;
+            background-color: #dfa2a2;
+            color: rgb(81, 7, 7);
+        }
+
+        .content {
+            padding: 0 14px;
+        }
+
+        .content p {
+            font-size: 16px;
+            color: rgb(242, 77, 77);
+            padding: 7px 0;
+        }
+
+        .content h2 {
+            padding: 7px 0 0 0;
+            color: #fff;
+        }
+
+        .booton {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .booton button {
+            padding: 6px 18px;
+            border-radius: 13px;
+            background-color: rgb(255, 105, 105);
+            border: none;
+            margin-top: 3px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .booton button:hover {
+            background-color: #f83838;
+            transform: scale(1.1);
+        }
+
+        .booton button a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .cointainer2 {
+            background-color: rgb(83, 68, 68);
+            min-height: 60px;
+            width: 95vw;
+            max-width: 1200px;
+            margin: 2vw auto;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 1.3rem;
+            border-radius: 10px;
+        }
+
+        .orrange-box {
+            height: 60px;
+            width: 60px;
+            background-color: orange;
+            bottom: 20px;
+            right: 20px;
+            position: fixed;
+            border-radius: 50%;
+            z-index: 100;
+            transition: box-shadow 0.5s, transform 0.5s;
+        }
+
+        .orrange-box:hover {
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+
+        .translate:hover {
+            transform: scale(1.5);
+        }
+
+        footer {
+            background-color: #868686;
+            min-height: 60px;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 5vw;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 3vw;
+            }
+            .card {
+                width: 95vw;
+                max-width: 400px;
+            }
+            ul li {
+                padding: 2vw 2vw;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                padding: 10px 0;
+            }
+            ul li {
+                display: block;
+                padding: 10px 0;
+            }
+            .container {
+                gap: 5vw;
+            }
+            .card {
+                width: 98vw;
+                max-width: 98vw;
+            }
+            .cointainer2 {
+                font-size: 1rem;
+                width: 98vw;
+            }
+            .orrange-box {
+                height: 50px;
+                width: 50px;
+                right: 10px;
+                bottom: 10px;
+            }
+            .content p, .content h2 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav1">
+            <nav>
+                <ul>
+                    <li><a href="/exersise.html">Home</a></li>
+                    <li><a href="/mediaQueries.html">About</a></li>
+                    <li><a href="/navbar.html">Service</a></li>
+                    <li><a href="/">contact-us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <div class="pic">
+                <img src="https://cdn.bikedekho.com/processedimages/suzuki/hayabusa/source/hayabusa661f65ebc8b61.jpg" alt="Hayabusha">
+            </div>
+            <div class="cap">
+                <span>1500cc</span>
+                <span>super sport</span>
+            </div>
+            <div class="content">
+                <h2>Hayabusha</h2>
+                <p>Hayabusha, Suzuki’s legendary superbike,
+                    roars with unmatched power, sleek design, and top-speed thrills—crafted
+                    for speed enthusiasts who crave adrenaline and precision handling.ayabusha</p>
+            </div>
+            <div class="booton">
+                <button><a target="_blank" href="https://www.suzukimotorcycle.co.in/product-details/hayabusa">Read
+                        more</a></button>
+            </div>
+        </div>
+
+        <div class="card car">
+            <div class="pic">
+                <img src="https://www.autocar.co.uk/sites/autocar.co.uk/files/01-mercedes-g500-g-wagen-2024-review-lead-driving-front.jpg" alt="G-wagon">
+            </div>
+            <div class="cap">
+                <span>2925cc</span>
+                <span>The mafia car</span>
+            </div>
+            <div class="content">
+                <h2>G-wagon</h2>
+                <p>The G-Wagon, or G-Class, is a luxurious and rugged off-road vehicle known for its iconic boxy design,
+                    powerful performance, and extensive
+                    off-road capabilities. Its timeless look and premium interior make it a desirable choice for those
+                    seeking both style and capability. </p>
+            </div>
+            <div class="booton">
+                <button><a target="_blank" href="https://www.mbusa.com/en/vehicles/class/g-class/suv">Read
+                        more</a></button>
+            </div>
+        </div>
+    </div>
+    <div class="cointainer2">
+        THIS IS NOT ONLY DRIME ITS MY TARGET
+    </div>
+    <div class="orrange-box translate"></div>
+    <footer>
+        SEE YOU AGAIN
+    </footer>
+</body>
+</html>
